@@ -1,0 +1,40 @@
+.contain{
+  background: linear-gradient(to bottom,#111,#161b28,#1c1859f2);
+}
+
+
+.toggle-switch{
+  width: 30px;
+  height: 15px;
+}
+.toggle-switch input{
+  display: none;
+}
+.slider{
+  transition: .3s;
+  border-radius: 20px;
+}
+.slider::before{
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 1.5px;
+  bottom: 1.5px;
+  background: #ddd;
+  transition: .4s;
+  border-radius: 50%;
+}
+.toggle-switch input:checked + .slider{
+  background-color: #ff5722;
+}
+.toggle-switch input:checked + .slider::before{
+  transform: translateX(15px);
+}
+.active-child{
+  display:inline-block ;
+}
+
+.select{
+  background: orangered;
+}

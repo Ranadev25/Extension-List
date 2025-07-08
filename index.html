@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser extension manager UI</title>
+  <link rel="shortcut icon" href="./photo/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="contain px-4 sm:px-20 py-4">
+    
+
+    <div class="extension-logo flex justify-between bg-slate-600  bg-opacity-30  p-2 rounded-lg">
+      <img class="logo-img w-32 " src="./photo/logo.svg" >
+      <img class="light-mode-icon p-2 bg-slate-600 rounded-lg" src="./photo/icon-sun.svg">
+    </div>
+
+    <!-- extension-list-heads -->
+
+    <div class="extension-list-heads ">
+      <div class="extainsion-list-title text-center  sm:flex justify-between items-center  pt-10 pb-5">
+        <h1 class="text-white mb-2 sm:mb-0 text-3xl sm:text-[22px] font-semibold">Extension List</h1>
+        <div class="select-extension">
+
+          <button class=" text-2xl sm:text-base px-3  py-1 bg-slate-600 bg-opacity-50 selected rounded-2xl extainsion-select-all" id="allbtn" onclick="activeAllChild()">All</button>
+
+          <button class="text-2xl sm:text-base px-3 py-1 bg-slate-600 bg-opacity-50 rounded-2xl extainsion-select-active" id="activebtn" onclick="activeChild()">Active</button>
+
+          <button class="text-2xl sm:text-base px-3 py-1 bg-slate-600 bg-opacity-50 rounded-2xl extainsion-select-inactive" id="inactive" onclick="inactiveChild()">Inactive</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- extainsion-list-item -->
+
+    <div class="extainsion-list-item grid md:grid-cols-3 gap-5">
+      
+<!-- Devlens -->
+      <div class=" extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-devlens.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">Devlens</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Quickly inspect layouts and visualize element boundaries</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30" id="checkbox"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- style-spy -->
+      <div class="  extainsion-item border border-slate-600  p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-style-spy.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">StyleSpy</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Instantly analyze and CSS from any webpage element.</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- speed-boost -->
+      <div class="  extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-speed-boost.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">SpeedBoost</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Optimizes browser resource usage to accelerate page losding</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- JSONWizard -->
+      <div class="  extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-json-wizard.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">JSONWizard</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Formats, validates,and prettifies JSON responses in-browser.</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- TabMaster Pro -->
+      <div class="  extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-tab-master-pro.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">TabMaster Pro</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Organizes browser tabs into goups and sessions</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- ViewportBuddy -->
+      <div class="  extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-viewport-buddy.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">ViewportBuddy</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Simulates various sereen resolutions directly within the browser.</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- Markup Notes -->
+      <div class=" extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-markup-notes.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">Markup Notes</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Enables annotation and notes directly onto webpages for collaborative debugging.</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- GridGuides -->
+      <div class=" extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-grid-guides.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">GridGuides</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Overlay customizable grids and alignment guides on any webpage</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- Palette Picker -->
+      <div class="  extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-palette-picker.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">Palette Picker</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Instantly extracts color palettes from any webpage.</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- LinkChecker -->
+      <div class=" extainsion-item border border-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-link-checker.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">LinkChecker</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Scans andvhighlights broken links on any page</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- dom Snapshot -->
+      <div class="  extainsion-item borderborder-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-dom-snapshot.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">dom Snapshot</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Capture and DOM structures quickly.</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+
+<!-- ConsolePlus -->
+      <div class=" extainsion-item borderborder-slate-600 p-3 rounded-xl  bg-slate-600 bg-opacity-25">
+        <div class="extainsion-info flex items-start gap-3">
+          <img class="w-12" src="./photo/logo-console-plus.svg">
+          <div class="axtainsion-text ">
+            <h2 class="text-white font-semibold leading-none">ConsolePlus</h2>
+            <p class="text-xs text-white opacity-60 mt-2">Enhanced developer comsole with advanced filtering and logging.</p>
+          </div>
+        </div>
+        <div class="devlens-child flex justify-between items-center mt-10">
+          <button class="child-remove-btn text-xs border border-stone-300 border-opacity-35 px-2 py-0.5 text-white rounded-2xl">Remove</button>
+
+          <label class="toggle-switch relative inline-block ">
+            <input type="checkbox" class="checkbox">
+            <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-slate-600 bg-opacity-30"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./index.js"></script>
+</body>
+</html>
