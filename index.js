@@ -1,9 +1,14 @@
+
+
 const allbtn = document.querySelector("#allbtn");
 const activebtn = document.querySelector("#activebtn");
 const inactive = document.querySelector("#inactive");
 const toggleSwitch = document.querySelectorAll(`.checkbox`);
 
  
+
+
+
 
 const lodingPage = () => {
   allbtn.classList.add("select");
@@ -12,7 +17,10 @@ const lodingPage = () => {
      toggleparent.style.display = "inline-block";
    })
 }
+
 document.addEventListener("DOMContentLoaded", lodingPage);
+
+
 
 const selectChildElement = () => {
  toggleSwitch.forEach(switchs => {
@@ -24,8 +32,9 @@ const selectChildElement = () => {
 const activeAllChild = () => {
   activebtn.classList.remove("select");
   inactive.classList.remove('select');
-  lodingPage()
+  lodingPage();
 }
+allbtn.addEventListener("click",activeAllChild)
 
 const activeChild = () => {
   inactive.classList.remove('select');
@@ -41,6 +50,7 @@ const activeChild = () => {
     }
    })
 }
+activebtn.addEventListener("click",activeChild )
 
 const inactiveChild = () => {
    allbtn.classList.remove("select");
@@ -56,3 +66,4 @@ const inactiveChild = () => {
     }
    })
 }
+inactive.addEventListener("click",inactiveChild)
